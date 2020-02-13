@@ -21,6 +21,7 @@ def sortTweets(allTweets):
 
 
 
+
 def getStock(ticker, p):
 	return yf.Ticker(ticker).history(period=p)
 

@@ -16,6 +16,7 @@ class TweetCleaner:
 
 		self.letters = 'abcdefghijklmnopqrstuvwxyz'
 		self.valid = 'abcdefghijklmnopqrstuvwxyz@#1234567890%$.'
+		self.ints = '1234567890'
 
 		self.regexList = ['^.?https://','^.?&amp;','\.\.\.$', '\.{1,}?$', '^\.{1,}?' ]
 		self.stop_words = list(stopwords.words('english'))
@@ -58,6 +59,7 @@ def cleanTweets(file):
 
 						if word != '' and word != ' ' and word != 'rt':
 							if len(word) > 2:
+								#skipped do later
 								if word[len(word)-1] == 's' and word[len(word) - 2] =="'":
 									word = word[:len(word)-2]
 							fixedWord = ''
